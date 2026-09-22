@@ -167,3 +167,5 @@ This program helps practice:
 * `datetime`
 * Basic calculations
 * Printing formatted information
+
+* watch video here :
