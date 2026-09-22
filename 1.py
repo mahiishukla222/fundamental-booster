@@ -1,0 +1,10 @@
+a=7
+b=("hello")
+c=False
+d=76.89000
+e=3+2j
+print(type(a)) 
+print(type(b))
+print(type(c))
+print(type(d))
+print(type(e))
