@@ -1,77 +1,169 @@
-# Python `id()` Function Example
+# Interactive Personal Data Collector
 
-## Program
+This Python program collects personal information from the user and displays the collected data along with its **data type** and **memory ID**.
 
-```python
-a = 100
-b = 100
-
-print(id(a))
-print(id(b))
-
-a = 200
-b = 100
-
-print(id(a))
-print(id(b))
-```
-
-## Explanation
-
-The `id()` function in Python returns the **unique identity (memory identity)** of an object during its lifetime.
-
-### Step 1
+## Python Code
 
 ```python
-a = 100
-b = 100
+import datetime
+
+print("Welcome to the interactive personal data collector!")
+
+name = input("enter your name:")
+age = int(input("enter your age:"))
+height = float(input("enter your height in meters:"))
+number = int(input("enter your favorite number:"))
+
+print("Thank you ! Here is the information collected from you:")
+
+print("name: ", name, "(type:", type(name), ", id: ", id(name))
+print("age: ", age, "(type:", type(age), ", id: ", id(age))
+print("height: ", height, "(type:", type(height), ", id: ", id(height))
+print("favorite number: ", number, "(type:", type(number), ", id: ", id(number))
+
+year = datetime.datetime.now().year
+birth_year = year - age
+
+print("you were born in the year: ", birth_year,
+      "(type:", type(birth_year), ", id: ", id(birth_year))
+
+print("Thank you for using the interactive personal data collector. have a nice day!")
 ```
 
-Both variables have the same value `100`.
+## Concepts Used
+
+### 1. `input()`
+
+Used to take information from the user.
 
 ```python
-print(id(a))
-print(id(b))
+name = input("enter your name:")
 ```
 
-Python may use the same integer object for `100`, so both `id()` values are generally the same.
+### 2. `int()`
 
-### Step 2
+Converts the input into an integer.
 
 ```python
-a = 200
-b = 100
+age = int(input("enter your age:"))
 ```
 
-Now `a` refers to `200`, while `b` still refers to `100`.
+### 3. `float()`
+
+Converts the input into a floating-point number.
 
 ```python
-print(id(a))
-print(id(b))
+height = float(input("enter your height in meters:"))
 ```
 
-The `id()` values will generally be different because `a` and `b` now refer to different integer objects.
+### 4. `type()`
 
-## Expected Output
+Shows the data type of a variable.
 
-The exact numbers will be different on different computers/runs, so your output may look like:
+```python
+type(age)
+```
+
+Example:
 
 ```text
-140721234567890
-140721234567890
-140721234571090
-140721234567890
+<class 'int'>
 ```
 
-> **Note:** Do not expect the exact `id()` numbers shown above. They are only examples.
+### 5. `id()`
 
-## Key Point
-
-`id(variable)` tells you the identity of the object that the variable refers to.
+Returns the unique identity/memory identifier of an object during the program's execution.
 
 ```python
-id(a)
+id(age)
 ```
 
-means: **"Give me the identity of the object referenced by `a`."**
-# fundamental-booster
+### 6. `datetime`
+
+The `datetime` module is used to get the current year.
+
+```python
+import datetime
+
+year = datetime.datetime.now().year
+```
+
+### 7. Birth Year Calculation
+
+The program calculates the approximate birth year using:
+
+```python
+birth_year = year - age
+```
+
+For example:
+
+```text
+Current Year = 2026
+Age = 18
+
+Birth Year = 2026 - 18
+           = 2008
+```
+
+## Sample Output
+
+```text
+Welcome to the interactive personal data collector!
+enter your name: Mahi
+enter your age: 18
+enter your height in meters: 1.65
+enter your favorite number: 7
+
+Thank you ! Here is the information collected from you:
+
+name:  Mahi (type: <class 'str'>, id: 123456)
+age:  18 (type: <class 'int'>, id: 123457)
+height:  1.65 (type: <class 'float'>, id: 123458)
+favorite number:  7 (type: <class 'int'>, id: 123459)
+
+you were born in the year:  2008
+(type: <class 'int'>, id: 123460)
+
+Thank you for using the interactive personal data collector. have a nice day!
+```
+
+> **Note:** The actual `id()` values will be different each time the program runs.
+
+## Requirements
+
+* Python 3.x
+* No external packages are required.
+
+## How to Run
+
+1. Install Python 3.
+2. Save the program as:
+
+```text
+personal_data_collector.py
+```
+
+3. Open the terminal in the same folder.
+4. Run:
+
+```bash
+python personal_data_collector.py
+```
+
+## Learning Objectives
+
+This program helps practice:
+
+* Variables
+* User input
+* Type conversion
+* `int`
+* `float`
+* `str`
+* `type()`
+* `id()`
+* Importing modules
+* `datetime`
+* Basic calculations
+* Printing formatted information
