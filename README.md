@@ -1,7 +1,8 @@
 # Interactive Personal Data Collector
 
 This Python program collects personal information from the user and displays the collected data along with its **data type** and **memory ID**.
-
+## watch video here :
+https://drive.google.com/file/d/1TFaqLkGLQSs09QKcrp2QD4yTbDdzHocw/view?usp=sharing
 ## Python Code
 
 ```python
